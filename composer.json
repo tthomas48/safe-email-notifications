@@ -3,6 +3,9 @@
     "platform-check": false,
     "allow-plugins": {
       "kylekatarnls/update-helper": false
+    },
+    "audit": {
+      "block-insecure": false
     }
   },
   "name": "freescout/safe-email-notifications",
