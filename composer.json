@@ -9,6 +9,7 @@
     }
   },
   "name": "freescout/safe-email-notifications",
+  "version": "1.0.0",
   "description": "Replace FreeScout user notification emails with minimal transactional messages",
   "license": "MIT",
   "require": {
