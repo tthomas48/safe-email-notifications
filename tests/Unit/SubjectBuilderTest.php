@@ -1,34 +1,76 @@
 <?php
 
-namespace YourName\SafeEmailNotifications\Tests\Unit;
+namespace Freescout\SafeEmailNotifications\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
-use YourName\SafeEmailNotifications\SubjectBuilder;
-use YourName\SafeEmailNotifications\SubjectResult;
+use Freescout\SafeEmailNotifications\SubjectBuilder;
+use Freescout\SafeEmailNotifications\SubjectResult;
 
 /**
  * Stub classes so method_exists() passes and SubjectBuilder can call getFullName, getCreatedBy, etc.
+ * Written for PHP 7.4 (no constructor property promotion).
  */
 final class PersonStub
 {
-    public function __construct(private string $name) {}
-    public function getFullName(bool $x = false): string { return $this->name; }
+    /** @var string */
+    private $name;
+
+    public function __construct(string $name)
+    {
+        $this->name = $name;
+    }
+
+    public function getFullName(bool $x = false): string
+    {
+        return $this->name;
+    }
 }
 
 final class ThreadStub
 {
-    public function __construct(
-        public int $type,
-        public ?int $action_type,
-        public \DateTimeInterface $created_at,
-        public string $createdByName = 'Jane Doe',
-        public string $statusName = 'active',
-        public string $assigneeName = 'John Smith',
-    ) {}
+    /** @var int */
+    public $type;
+    /** @var int|null */
+    public $action_type;
+    /** @var \DateTimeInterface */
+    public $created_at;
+    /** @var string */
+    public $createdByName;
+    /** @var string */
+    public $statusName;
+    /** @var string */
+    public $assigneeName;
 
-    public function getCreatedBy(): PersonStub { return new PersonStub($this->createdByName); }
-    public function getStatusName(): string { return $this->statusName; }
-    public function getAssigneeName(bool $a, $b): string { return $this->assigneeName; }
+    public function __construct(
+        int $type,
+        ?int $action_type,
+        \DateTimeInterface $created_at,
+        string $createdByName = 'Jane Doe',
+        string $statusName = 'active',
+        string $assigneeName = 'John Smith'
+    ) {
+        $this->type = $type;
+        $this->action_type = $action_type;
+        $this->created_at = $created_at;
+        $this->createdByName = $createdByName;
+        $this->statusName = $statusName;
+        $this->assigneeName = $assigneeName;
+    }
+
+    public function getCreatedBy(): PersonStub
+    {
+        return new PersonStub($this->createdByName);
+    }
+
+    public function getStatusName(): string
+    {
+        return $this->statusName;
+    }
+
+    public function getAssigneeName(bool $a, $b): string
+    {
+        return $this->assigneeName;
+    }
 }
 
 class SubjectBuilderTest extends TestCase

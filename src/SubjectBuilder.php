@@ -1,6 +1,6 @@
 <?php
 
-namespace YourName\SafeEmailNotifications;
+namespace Freescout\SafeEmailNotifications;
 
 /**
  * Builds a transactional subject payload (SubjectResult) from a conversation.

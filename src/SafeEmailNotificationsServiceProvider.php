@@ -1,6 +1,6 @@
 <?php
 
-namespace YourName\SafeEmailNotifications;
+namespace Freescout\SafeEmailNotifications;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -5,11 +5,11 @@
       "kylekatarnls/update-helper": false
     }
   },
-  "name": "yourname/safe-email-notifications",
+  "name": "freescout/safe-email-notifications",
   "description": "Replace FreeScout user notification emails with minimal transactional messages",
   "license": "MIT",
   "require": {
-    "php": ">=7.1",
+    "php": ">=7.4",
     "illuminate/support": "5.5.*",
     "tormjens/eventy": "^0.5"
   },
@@ -19,18 +19,18 @@
   },
   "autoload": {
     "psr-4": {
-      "YourName\\SafeEmailNotifications\\": "src/"
+      "Freescout\\SafeEmailNotifications\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "YourName\\SafeEmailNotifications\\Tests\\": "tests/"
+      "Freescout\\SafeEmailNotifications\\Tests\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "YourName\\SafeEmailNotifications\\SafeEmailNotificationsServiceProvider"
+        "Freescout\\SafeEmailNotifications\\SafeEmailNotificationsServiceProvider"
       ]
     }
   },

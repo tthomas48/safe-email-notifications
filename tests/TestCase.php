@@ -1,6 +1,6 @@
 <?php
 
-namespace YourName\SafeEmailNotifications\Tests;
+namespace Freescout\SafeEmailNotifications\Tests;
 
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
