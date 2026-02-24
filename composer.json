@@ -9,7 +9,7 @@
     }
   },
   "name": "freescout/safe-email-notifications",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Replace FreeScout user notification emails with minimal transactional messages",
   "license": "MIT",
   "require": {
@@ -23,7 +23,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Freescout\\SafeEmailNotifications\\": "src/"
+      "Modules\\SafeEmailNotifications\\": ""
     }
   },
   "autoload-dev": {
@@ -34,7 +34,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Freescout\\SafeEmailNotifications\\SafeEmailNotificationsServiceProvider"
+        "Modules\\SafeEmailNotifications\\Providers\\SafeEmailNotificationsServiceProvider"
       ]
     }
   },

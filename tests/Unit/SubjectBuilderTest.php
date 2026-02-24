@@ -3,8 +3,8 @@
 namespace Freescout\SafeEmailNotifications\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
-use Freescout\SafeEmailNotifications\SubjectBuilder;
-use Freescout\SafeEmailNotifications\SubjectResult;
+use Modules\SafeEmailNotifications\SubjectBuilder;
+use Modules\SafeEmailNotifications\SubjectResult;
 
 /**
  * Stub classes so method_exists() passes and SubjectBuilder can call getFullName, getCreatedBy, etc.

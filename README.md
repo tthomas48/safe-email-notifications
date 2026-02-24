@@ -11,16 +11,33 @@ Replace FreeScout user notification emails with minimal transactional messages. 
 
 ## Installation
 
-```bash
-composer require yourname/safe-email-notifications
-```
+This package is a [FreeScout-style module](https://github.com/LJPc-solutions/freescout-alternative-signatures-module) with `module.json`. Place it in FreeScout’s `Modules` directory **without** changing the root `composer.json`, so it survives container upgrades.
 
-Laravel will auto-discover the service provider. Clear caches if needed:
+1. **Extract the release** (or clone) into your modules directory. If FreeScout uses a persistent `data/Modules` volume, use that:
 
-```bash
-php artisan config:clear
-php artisan view:clear
-```
+   ```bash
+   # Example: extract the GitHub release tarball
+   tar -xzf safe-email-notifications-1.0.0.tar.gz -C /path/to/freescout/data/Modules
+   mv data/Modules/safe-email-notifications-1.0.0 data/Modules/SafeEmailNotifications
+   ```
+
+   The folder name must be **`SafeEmailNotifications`** (StudlyCase) so it matches the `Modules\SafeEmailNotifications` namespace.
+
+2. **Point FreeScout at that directory** so it scans for modules:
+   - If the app’s `Modules` directory is **inside** the container and you want to use `data/Modules`, make the app’s `Modules` a symlink to `data/Modules` (e.g. in your image or entrypoint: `ln -sfn /data/Modules /var/www/html/Modules`), **or**
+   - If your FreeScout install already uses `data/Modules` as the modules path, ensure this package lives at `data/Modules/SafeEmailNotifications`.
+
+3. **Enable the module** in FreeScout: Settings → Modules → enable “Safe Email Notifications”.
+
+4. Clear caches:
+
+   ```bash
+   php artisan config:clear
+   php artisan view:clear
+   php artisan cache:clear
+   ```
+
+No changes to the root `composer.json` are required; FreeScout’s existing `Modules\` PSR-4 mapping loads the module.
 
 ## Features
 

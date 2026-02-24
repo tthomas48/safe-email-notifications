@@ -1,0 +1,20 @@
+{
+    "name": "Safe Email Notifications",
+    "alias": "safeemailnotifications",
+    "description": "Replace user notification emails with minimal transactional messages (no message body, avoids forwarding spam).",
+    "version": "1.1.0",
+    "detailsUrl": "",
+    "author": "FreeScout",
+    "authorUrl": "",
+    "requiredAppVersion": "1.0.0",
+    "license": "MIT",
+    "keywords": ["email", "notifications", "transactional", "spam"],
+    "active": 0,
+    "order": 0,
+    "providers": [
+        "Modules\\SafeEmailNotifications\\Providers\\SafeEmailNotificationsServiceProvider"
+    ],
+    "aliases": {},
+    "files": ["start.php"],
+    "requires": []
+}

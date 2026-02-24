@@ -1,8 +1,9 @@
 <?php
 
-namespace Freescout\SafeEmailNotifications;
+namespace Modules\SafeEmailNotifications\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Modules\SafeEmailNotifications\SubjectBuilder;
 
 class SafeEmailNotificationsServiceProvider extends ServiceProvider
 {

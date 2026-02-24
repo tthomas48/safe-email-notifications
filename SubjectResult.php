@@ -1,6 +1,6 @@
 <?php
 
-namespace Freescout\SafeEmailNotifications;
+namespace Modules\SafeEmailNotifications;
 
 /**
  * Value object for a built subject (prefix + message key + replace params).
