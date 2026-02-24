@@ -1,0 +1,40 @@
+{
+  "config": {
+    "platform-check": false,
+    "allow-plugins": {
+      "kylekatarnls/update-helper": false
+    }
+  },
+  "name": "yourname/safe-email-notifications",
+  "description": "Replace FreeScout user notification emails with minimal transactional messages",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.1",
+    "illuminate/support": "5.5.*",
+    "tormjens/eventy": "^0.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "9.5.28",
+    "mockery/mockery": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "YourName\\SafeEmailNotifications\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "YourName\\SafeEmailNotifications\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "YourName\\SafeEmailNotifications\\SafeEmailNotificationsServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "phpunit"
+  }
+}
